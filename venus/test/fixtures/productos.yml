@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo_producto: MyString
+  nomber: MyString
+  precio: 1
+  tock: 1
+
+two:
+  codigo_producto: MyString
+  nomber: MyString
+  precio: 1
+  tock: 1
