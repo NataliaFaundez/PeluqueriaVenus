@@ -4,12 +4,8 @@ one:
   rut: MyString
   nombre: MyString
   telefono: MyString
-  codigo_servicio: 1
-  monto_gastado: 1
 
 two:
   rut: MyString
   nombre: MyString
   telefono: MyString
-  codigo_servicio: 1
-  monto_gastado: 1
