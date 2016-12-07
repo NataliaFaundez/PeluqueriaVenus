@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo_servicio: 1
+  nombre: MyString
+  precio: 1
+  stylist_id: 
+
+two:
+  codigo_servicio: 1
+  nombre: MyString
+  precio: 1
+  stylist_id: 
