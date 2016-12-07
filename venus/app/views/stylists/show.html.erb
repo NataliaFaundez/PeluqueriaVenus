@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre estilista:</strong>
+  <%= @stylist.nombre_estilista %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @stylist.telefono %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @stylist.direccion %>
+</p>
+
+<p>
+  <strong>Sueldo base:</strong>
+  <%= @stylist.sueldo_base %>
+</p>
+
+<%= link_to 'Edit', edit_stylist_path(@stylist) %> |
+<%= link_to 'Back', stylists_path %>

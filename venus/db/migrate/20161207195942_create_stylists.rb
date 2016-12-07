@@ -1,6 +1,6 @@
-class CreateEstilista < ActiveRecord::Migration
+class CreateStylists < ActiveRecord::Migration
   def change
-    create_table :estilista do |t|
+    create_table :stylists do |t|
       t.string :nombre_estilista
       t.string :telefono
       t.string :direccion
