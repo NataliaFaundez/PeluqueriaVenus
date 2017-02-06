@@ -32,8 +32,17 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li class="active"><%=link_to "Home", root_path%></li>
+                <% if user_signed_in? %>
+                  <%@usuario = User.find(current_user.id)%>
+                  <% if @usuario.tipo_usuario == 1 %>
+                    <li><%=link_to "Admin", admin_url%></li>
+                  <% elsif @usuario.tipo_usuario == 2 %>
+                    <li><%=link_to "Estilista", estilista_url%>
+                  <% elsif @usuario.tipo_usuario == 3 %>
+                    <li><%=link_to "Contador", contador_url%>
+                  <% end %>
+                <% end %>
                 <li><%=link_to "Sobre nosotros", root_path%></li>
-                <li><%=link_to "contacto", root_path%></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Configuración <span class="caret"></span></a>
                   <ul class="dropdown-menu">
@@ -50,22 +59,6 @@
           </div>
         </nav>
 <!--===================================FIN NAVBAR==================================-->
-
-<% if current_page?('/') %>
-    <%if user_signed_in?%>
-        <% @usuario = User.find(current_user.id) %>
-        <% if @usuario.tipo_usuario == 1 %>
-            <!--ruta admin-->
-
-        <% elsif @usuario.tipo_usuario == 2 %>
-            <!--ruta estilista-->
-        <% elsif @usuario.tipo_usuario == 3 %>
-            <!--ruta contador-->
-        <% else %>
-            <!--otra ruta como cliente-->
-        <% end %>
-    <% end %>
-<% end %>
 
 <%= yield %>
 

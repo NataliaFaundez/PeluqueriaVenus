@@ -1,0 +1,2 @@
+module EstilistaHelper
+end

@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
 
+  get 'contador/index'
+
+  get 'estilista/index'
+
+  get 'admin/index'
+
   devise_for :users
   resources :services
   resources :sales
@@ -14,6 +20,10 @@ Rails.application.routes.draw do
   resources :products
   resources :stylists
   resources :clients
+
+  get 'admin' => 'admin#index'
+  get 'estilista' => 'estilista#index'
+  get 'contador' => 'contador#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
