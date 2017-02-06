@@ -20,29 +20,30 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+
+  <% tipos = {'admin' => 1,'estilista' => 2, 'contador' => 3, 'otro' => 4} %>
+    <% lista = tipos.sort %>
+    <% lista.each do |tipo | %>
+      <%= f.radio_button :tipo_usuario, tipo[1] %>
+      <label for="<%= tipo[1] %>"><%= tipo[0] %></label>
+    <% end %> 
+  </div>
+  
 <!--=========comentado por estar duplicado===========
   <div class="field">
-
-  <#% tipos = {'admin' => 1,'estilista' => 2, 'cliente' => 3, 'otro' => 4} %>
-    <#% lista = tipos.sort %>
-    <#% lista.each do |tipo | %>
-      <#%= f.radio_button :tipo_usuario, tipo[1] %>
-      <label for="<#%= tipo[1] %>"><#%= tipo[0] %></label>
-    <#% end %> 
+    <#%= f.label :tipo_usuario %><br />
+    <#%= radio_button_tag(:tipo_usuario, 1) %>
+    <#%= label_tag(:tipo_usuario, "Admin") %><br />
+    <#%= radio_button_tag(:tipo_usuario, 2) %>
+    <#%= label_tag(:tipo_usuario, "Estilista") %><br />
+    <#%= radio_button_tag(:tipo_usuario, 3) %>
+    <#%= label_tag(:tipo_usuario, "Cliente") %><br />
+    <#%= radio_button_tag(:tipo_usuario, 4) %>
+    <#%= label_tag(:tipo_usuario, "Otro") %><br />
   </div>
   -->
-
-  <div class="field">
-    <%= f.label :tipo_usuario %><br />
-    <%= radio_button_tag(:tipo_usuario, 1) %>
-    <%= label_tag(:tipo_usuario, "Admin") %><br />
-    <%= radio_button_tag(:tipo_usuario, 2) %>
-    <%= label_tag(:tipo_usuario, "Estilista") %><br />
-    <%= radio_button_tag(:tipo_usuario, 3) %>
-    <%= label_tag(:tipo_usuario, "Cliente") %><br />
-    <%= radio_button_tag(:tipo_usuario, 4) %>
-    <%= label_tag(:tipo_usuario, "Otro") %><br />
-  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

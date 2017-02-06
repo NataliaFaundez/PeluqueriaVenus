@@ -33,7 +33,7 @@
 
       <div class="field">
 
-  <% tipos = {'admin' => 1,'estilista' => 2, 'cliente' => 3, 'otro' => 4} %>
+  <% tipos = {'admin' => 1,'estilista' => 2, 'contador' => 3, 'otro' => 4} %>
     <% lista = tipos.sort %>
     <% lista.each do |tipo | %>
       <%= f.radio_button :tipo_usuario, tipo[1] %>

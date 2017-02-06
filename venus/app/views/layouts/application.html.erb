@@ -51,6 +51,22 @@
         </nav>
 <!--===================================FIN NAVBAR==================================-->
 
+<% if current_page?('/') %>
+    <%if user_signed_in?%>
+        <% @usuario = User.find(current_user.id) %>
+        <% if @usuario.tipo_usuario == 1 %>
+            <!--ruta admin-->
+
+        <% elsif @usuario.tipo_usuario == 2 %>
+            <!--ruta estilista-->
+        <% elsif @usuario.tipo_usuario == 3 %>
+            <!--ruta contador-->
+        <% else %>
+            <!--otra ruta como cliente-->
+        <% end %>
+    <% end %>
+<% end %>
+
 <%= yield %>
 
 </body>
