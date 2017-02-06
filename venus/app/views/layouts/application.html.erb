@@ -8,12 +8,48 @@
 </head>
 <body>
 
-    <%= render 'partials/navigation' %>
-<!--
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
--->
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 
+<!--=================================NAVBAR========================================= -->
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expande d="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                <%= image_tag "logo.jpg" %>
+              </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><%=link_to "Home", root_path%></li>
+                <li><%=link_to "Sobre nosotros", root_path%></li>
+                <li><%=link_to "contacto", root_path%></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Configuración <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                  <% if user_signed_in? %>
+                    <li><%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %></li>
+                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+                  <% else %>
+                    <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+                  <% end %>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+<!--===================================FIN NAVBAR==================================-->
 
 <%= yield %>
 
