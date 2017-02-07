@@ -62,27 +62,42 @@
 
 <!--=======================lista de opciones segun usuario=========================-->
 <div class="col-md-2">
-<<<<<<< HEAD
-      <div class="list-group">
-        <% if user_signed_in? %>
-              <%@usuario = User.find(current_user.id)%>
-=======
+    <% if user_signed_in? %>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+                <div class="panel-heading">Acciones</div>
+                <!-- List group -->
+                <ul class="list-group">
+                    <%@usuario = User.find(current_user.id)%>
+                    <li><%= link_to 'Editar perfil', edit_user_registration_path, :class => 'list-group-item active' %></li>
+                    <% if @usuario.tipo_usuario == 1 %>
+                        <li><%= link_to 'Usuario', nuevo_producto_url, :class => 'list-group-item glyphicon glyphicon-user' %></li>
+                        <li><%= link_to 'Crear producto', nuevo_producto_url, :class => 'list-group-item' %></li>            
+                        <li><%= link_to 'Crear producto', nuevo_producto_url, :class => 'list-group-item' %></li>            
+                        <li><%= link_to 'Listar productos', products_url, :class => 'list-group-item' %></li>
+                    <% end %>
+                    <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'list-group-item' %></li>
+                </ul>
+        </div>
+    <% end %>
+</div>
+<!--=========================antiguo list group==========================
+<div class="col-md-2">
     <div class="list-group">
-        <% if user_signed_in? %>
-            <%@usuario = User.find(current_user.id)%>
->>>>>>> c1fd2523657a95cfa9fdcb8a74e9cd1d1e9001fd
-            <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'list-group-item active' %>
-            <% if @usuario.tipo_usuario == 1 %>
-                <%= link_to 'Usuario', nuevo_producto_url, :class => 'list-group-item glyphicon glyphicon-user' %>
-                <%= link_to 'Crear producto', nuevo_producto_url, :class => 'list-group-item' %>            
-                <%= link_to 'Crear producto', nuevo_producto_url, :class => 'list-group-item' %>            
-                <%= link_to 'Listar productos', products_url, :class => 'list-group-item' %>
-            <% end %>
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'list-group-item' %>
-        <% end %>
-        
+        <#% if user_signed_in? %>
+            <#%@usuario = User.find(current_user.id)%>
+            <#%= link_to 'Editar perfil', edit_user_registration_path, :class => 'list-group-item active' %>
+            <#% if @usuario.tipo_usuario == 1 %>
+                <#%= link_to 'Crear producto', nuevo_producto_url, :class => 'list-group-item' %>
+            <#% end %>
+            <#% if @usuario.tipo_usuario == 1 or @usuario.tipo_usuario == 2 %>
+                <#%= link_to 'Listar productos', products_url, :class => 'list-group-item' %>
+            <#% end %>
+            <#%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'list-group-item' %>
+        <#% end %>
     </div>
 </div>
+=================================fin antiguo list group================-->
 
 <!--===========================fin lista de opciones=================================-->
 
