@@ -63,7 +63,7 @@
 <!--=======================lista de opciones segun usuario=========================-->
 <div class="col-md-2">
     <div class="list-group">
-        <% if user_signed_in? and current_page?(admin_url) or current_page?(estilista_url) or current_page?(contador_url) %>
+        <% if user_signed_in? %>
             <%@usuario = User.find(current_user.id)%>
             <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'list-group-item active' %>
             <% if @usuario.tipo_usuario == 1 %>
