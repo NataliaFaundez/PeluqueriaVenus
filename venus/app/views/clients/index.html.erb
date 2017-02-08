@@ -18,9 +18,14 @@
         <td><%= client.rut %></td>
         <td><%= client.nombre %></td>
         <td><%= client.telefono %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <%@usuario = User.find(current_user.id)%>
+          <% if @usuario.tipo_usuario == 1 %>
+            <td><%= link_to 'Show', client %></td>
+            <td><%= link_to 'Edit', edit_client_path(client) %></td>
+            <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +33,9 @@
 
 <br>
 
-<%= link_to 'New Client', new_client_path %>
+<% if user_signed_in? %>
+  <%@usuario = User.find(current_user.id)%>
+  <% if @usuario.tipo_usuario == 1 or @usuario.tipo_usuario == 2 %>
+    <%= link_to 'New Client', new_client_path %>
+  <% end %>
+<% end %>

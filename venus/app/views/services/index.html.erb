@@ -20,9 +20,14 @@
         <td><%= service.nombre %></td>
         <td><%= service.precio %></td>
         <td><%= service.stylist %></td>
-        <td><%= link_to 'Show', service %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <%@usuario = User.find(current_user.id)%>
+          <% if @usuario.tipo_usuario == 1 %>
+            <td><%= link_to 'Show', service %></td>
+            <td><%= link_to 'Edit', edit_service_path(service) %></td>
+            <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +35,9 @@
 
 <br>
 
-<%= link_to 'New Service', new_service_path %>
+<% if user_signed_in? %>
+  <%@usuario = User.find(current_user.id)%>
+  <% if @usuario.tipo_usuario == 1 or @usuario.tipo_usuario == 2 %>
+    <%= link_to 'New Service', new_service_path %>
+  <% end %>
+<% end %>
