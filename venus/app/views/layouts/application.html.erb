@@ -77,6 +77,18 @@
                         <li><%= link_to 'Listar productos', products_url, :class => 'list-group-item' %></li>
                         <li><%= link_to 'Asignar Comision', sales_url, :class => 'list-group-item' %></li>
                     <% end %>
+                    <% if @usuario.tipo_usuario == 2 %>
+                        <li><%= link_to ' Administrar Clientes', clients_url, :class => 'list-group-item glyphicon glyphicon-user' %></li>
+                        <li><%= link_to ' Administrar Producto', products_url, :class => 'list-group-item glyphicon glyphicon-list-alt' %></li>
+                        <li><%= link_to ' Administrar Servicios', services_url, :class => 'list-group-item glyphicon glyphicon-list-alt' %></li>    
+                        <li><%= link_to 'Listar productos', products_url, :class => 'list-group-item' %></li>
+                    <% end %>
+                    <% if @usuario.tipo_usuario == 3 %>
+                        <li><%= link_to ' Administrar Clientes', clients_url, :class => 'list-group-item glyphicon glyphicon-user' %></li>
+                        <li><%= link_to ' Administrar Producto', products_url, :class => 'list-group-item glyphicon glyphicon-list-alt' %></li>
+                        <li><%= link_to ' Administrar Servicios', services_url, :class => 'list-group-item glyphicon glyphicon-list-alt' %></li>    
+                        <li><%= link_to 'Listar productos', products_url, :class => 'list-group-item' %></li>
+                    <% end %>
                     <li><%= link_to 'Editar perfil', edit_user_registration_path, :class => 'list-group-item ' %></li>
                     <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'list-group-item' %></li>
                 </ul>
