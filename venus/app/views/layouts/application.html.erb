@@ -63,19 +63,21 @@
 <!--=======================lista de opciones segun usuario=========================-->
 <div class="col-md-2">
     <% if user_signed_in? %>
-        <div class="panel panel-default">
+        <div class="panel panel-danger">
             <!-- Default panel contents -->
-                <div class="panel-heading">Acciones</div>
+                <div class="panel-heading ">Acciones</div>
                 <!-- List group -->
                 <ul class="list-group">
                     <%@usuario = User.find(current_user.id)%>
-                    <li><%= link_to 'Editar perfil', edit_user_registration_path, :class => 'list-group-item active' %></li>
                     <% if @usuario.tipo_usuario == 1 %>
-                        <li><%= link_to 'Usuario', nuevo_producto_url, :class => 'list-group-item glyphicon glyphicon-user' %></li>
-                        <li><%= link_to 'Crear producto', nuevo_producto_url, :class => 'list-group-item' %></li>            
-                        <li><%= link_to 'Crear producto', nuevo_producto_url, :class => 'list-group-item' %></li>            
+                        <li><%= link_to ' Administrar Usuarios', products_url, :class => 'list-group-item glyphicon glyphicon-user' %></li>
+                        <li><%= link_to ' Administrar Clientes', products_url, :class => 'list-group-item glyphicon glyphicon-user' %></li>
+                        <li><%= link_to ' Administrar Producto', nuevo_producto_url, :class => 'list-group-item glyphicon glyphicon-list-alt' %></li>
+                        <li><%= link_to ' Administrar Servicios', products_url, :class => 'list-group-item glyphicon glyphicon-list-alt' %></li>    
                         <li><%= link_to 'Listar productos', products_url, :class => 'list-group-item' %></li>
+                        <li><%= link_to 'Asignar Comision', products_url, :class => 'list-group-item' %></li>
                     <% end %>
+                    <li><%= link_to 'Editar perfil', edit_user_registration_path, :class => 'list-group-item ' %></li>
                     <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'list-group-item' %></li>
                 </ul>
         </div>
