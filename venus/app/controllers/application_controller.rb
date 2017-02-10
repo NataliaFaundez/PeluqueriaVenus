@@ -18,8 +18,7 @@ class ApplicationController < ActionController::Base
 private
   def autenticate_user! #metodo que limita las paginas que puede visitar un usuario sin entrar a su cuenta
     if user_signed_in?
-      super
-      
+
     elsif request.original_fullpath == root_path
 
     elsif request.original_fullpath == new_user_session_path
