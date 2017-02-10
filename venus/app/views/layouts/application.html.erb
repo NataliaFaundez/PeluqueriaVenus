@@ -8,12 +8,6 @@
 </head>
 <body>
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
 
 <!--=================================NAVBAR========================================= -->
         <nav class="navbar navbar-inverse navbar-static-top">
@@ -59,6 +53,17 @@
           </div>
         </nav>
 <!--===================================FIN NAVBAR==================================-->
+
+<!--=========================NOTIFICACIONES========================-->
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+<!--========================FIN NOTIFICACIONES=====================-->
 
 <!--=======================lista de opciones segun usuario=========================-->
 <div class="col-md-2">

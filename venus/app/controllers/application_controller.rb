@@ -6,12 +6,27 @@ class ApplicationController < ActionController::Base
   
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  before_filter :autenticate_user!
+
   protected
   
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation, :tipo_usuario])
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :email, :password, :password_confirmation, :tipo_usuario])
 
+  end
+private
+  def autenticate_user! #metodo que limita las paginas que puede visitar un usuario sin entrar a su cuenta
+    if user_signed_in?
+      super
+      
+    elsif request.original_fullpath == root_path
+
+    elsif request.original_fullpath == new_user_session_path
+
+    else
+      redirect_to root_path, notice: "No tienes permiso de ver esta página, inicia sesión" #if request.original_fullpath != root_path or request.original_fullpath != new_user_session_path #or request.original_fullpath != ruta_sobre_nosotros
+    end
   end
   
 #metodo que indica a que pagina direccionar segun tipo de usuario
