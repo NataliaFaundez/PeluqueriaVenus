@@ -10,20 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :Product_id %><br>
-    <%= f.text_field :Product_id %>
-  </div>
-  <div class="field">
-    <%= f.label :Client_id %><br>
-    <%= f.text_field :Client_id %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha %><br>
-    <%= f.date_select :fecha %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="panel panel-primary col-md-offset-2 col-md-3">
+    <div class="panel-heading">Venta</div>
+    <div class="field">
+      <%= f.label :Product_id %><br>
+      <%= f.text_field :Product_id %> <!--verificar codigo de creacion de venta-->
+    </div>
+    <div class="field">
+      <%= f.label :Client_id %><br>
+      <%= f.text_field :Client_id %>
+    </div>
+    <div class="field">
+      <%= f.label :fecha %><br>
+      <%= f.date_select :fecha %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>

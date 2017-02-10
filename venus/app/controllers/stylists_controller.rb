@@ -28,7 +28,7 @@ class StylistsController < ApplicationController
 
     respond_to do |format|
       if @stylist.save
-        format.html { redirect_to @stylist, notice: 'Stylist was successfully created.' }
+        format.html { redirect_to @stylist, notice: 'El estilista fue creado.' }
         format.json { render :show, status: :created, location: @stylist }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class StylistsController < ApplicationController
   def update
     respond_to do |format|
       if @stylist.update(stylist_params)
-        format.html { redirect_to @stylist, notice: 'Stylist was successfully updated.' }
+        format.html { redirect_to @stylist, notice: 'El estilista fue actualizado.' }
         format.json { render :show, status: :ok, location: @stylist }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class StylistsController < ApplicationController
   def destroy
     @stylist.destroy
     respond_to do |format|
-      format.html { redirect_to stylists_url, notice: 'Stylist was successfully destroyed.' }
+      format.html { redirect_to stylists_url, notice: 'El estilista fue destruido.' }
       format.json { head :no_content }
     end
   end

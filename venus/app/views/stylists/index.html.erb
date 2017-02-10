@@ -1,33 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Stylists</h1>
+<h1>Estilista</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre estilista</th>
-      <th>Telefono</th>
-      <th>Direccion</th>
-      <th>Sueldo base</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="panel panel-primary col-md-offset-2">
+  <div class="panel-heading">Estilistas</div>
 
-  <tbody>
-    <% @stylists.each do |stylist| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= stylist.nombre_estilista %></td>
-        <td><%= stylist.telefono %></td>
-        <td><%= stylist.direccion %></td>
-        <td><%= stylist.sueldo_base %></td>
-        <td><%= link_to 'Show', stylist %></td>
-        <td><%= link_to 'Edit', edit_stylist_path(stylist) %></td>
-        <td><%= link_to 'Destroy', stylist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nombre estilista</th>
+        <th>Telefono</th>
+        <th>Direccion</th>
+        <th>Sueldo base</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @stylists.each do |stylist| %>
+        <tr>
+          <td><%= stylist.nombre_estilista %></td>
+          <td><%= stylist.telefono %></td>
+          <td><%= stylist.direccion %></td>
+          <td><%= stylist.sueldo_base %></td>
+          <% if user_signed_in? %>
+            <%@usuario = User.find(current_user.id)%>
+            <% if @usuario.tipo_usuario == 1 %>
+              <td><%= link_to 'Mostrar', stylist %></td>
+              <td><%= link_to 'Editar', edit_stylist_path(stylist) %></td>
+              <td><%= link_to 'Eliminar', stylist, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<%= link_to 'New Stylist', new_stylist_path %>
+<% if user_signed_in? %>
+  <%@usuario = User.find(current_user.id)%>
+  <% if @usuario.tipo_usuario == 1 %>
+    <%= link_to 'Nuevo estilista', new_stylist_path %>
+  <% end %>
+<% end %>

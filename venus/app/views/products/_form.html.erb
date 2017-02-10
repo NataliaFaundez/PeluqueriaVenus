@@ -11,27 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :codigo_producto %><br>
-    <%= f.number_field :codigo_producto %>
+  <div class="panel panel-primary col-md-offset-2 col-md-3">
+    <div class="panel-heading">Producto</div>
+    <div class="field">
+      <%= f.label :codigo_producto %><br>
+      <%= f.number_field :codigo_producto %>
+    </div>
+    <div class="field">
+      <%= f.label :nombre %><br>
+      <%= f.text_field :nombre %>
+    </div>
+    <div class="field">
+      <%= f.label :precio %><br>
+      <%= f.number_field :precio %>
+    </div>
+    <div class="field">
+      <%= f.label :stock %><br>
+      <%= f.number_field :stock %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :precio %><br>
-    <%= f.number_field :precio %>
-  </div>
-  <div class="field">
-    <%= f.label :stock %><br>
-    <%= f.number_field :stock %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<% end %>
 
-   <!--asi quiero,todo en la misma hoja para ver, mas comodo para el usuario ======-->
+   <!--asi quiero,todo en la misma hoja para ver, mas comodo para el usuario ======
   
   <div class="col-md-6">
     <div class="table-responsive">
@@ -56,9 +60,9 @@
               <td>Edit</td>
               <td>Destr</td>
             </tr>
-          <% end %>
+          <#% end %>
         </tbody>
       </table>
     </div>
   </div>
-
+-->

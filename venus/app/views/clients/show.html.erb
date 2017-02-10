@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Rut:</strong>
-  <%= @client.rut %>
-</p>
+<div class="panel panel-primary col-md-offset-2 col-md-3">
+  <div class="panel-heading">Cliente</div>
+  <p>
+    <strong>Rut:</strong>
+    <%= @client.rut %>
+  </p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @client.nombre %>
-</p>
+  <p>
+    <strong>Nombre:</strong>
+    <%= @client.nombre %>
+  </p>
 
-<p>
-  <strong>Telefono:</strong>
-  <%= @client.telefono %>
-</p>
+  <p>
+    <strong>Telefono:</strong>
+    <%= @client.telefono %>
+  </p>
+</div>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to 'Editar', edit_client_path(@client) %> |
+<%= link_to 'Atras', clients_path %>

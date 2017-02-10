@@ -1,24 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre estilista:</strong>
-  <%= @stylist.nombre_estilista %>
-</p>
+<div class="panel panel-primary col-md-offset-2 col-md-3">
+  <div class="panel-heading">Estilista</div>
+  <p>
+    <strong>Nombre estilista:</strong>
+    <%= @stylist.nombre_estilista %>
+  </p>
 
-<p>
-  <strong>Telefono:</strong>
-  <%= @stylist.telefono %>
-</p>
+  <p>
+    <strong>Telefono:</strong>
+    <%= @stylist.telefono %>
+  </p>
 
-<p>
-  <strong>Direccion:</strong>
-  <%= @stylist.direccion %>
-</p>
+  <p>
+    <strong>Direccion:</strong>
+    <%= @stylist.direccion %>
+  </p>
 
-<p>
-  <strong>Sueldo base:</strong>
-  <%= @stylist.sueldo_base %>
-</p>
+  <p>
+    <strong>Sueldo base:</strong>
+    <%= @stylist.sueldo_base %>
+  </p>
+</div>
 
-<%= link_to 'Edit', edit_stylist_path(@stylist) %> |
-<%= link_to 'Back', stylists_path %>
+<%= link_to 'Editar', edit_stylist_path(@stylist) %> |
+<%= link_to 'Atras', stylists_path %>

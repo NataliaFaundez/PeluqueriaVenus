@@ -24,7 +24,7 @@ private
     elsif request.original_fullpath == new_user_session_path
 
     else
-      redirect_to root_path, notice: "No tienes permiso de ver esta página, inicia sesión" #if request.original_fullpath != root_path or request.original_fullpath != new_user_session_path #or request.original_fullpath != ruta_sobre_nosotros
+      redirect_to root_path, notice: "No tienes permiso de ver esta página, inicia sesión"
     end
   end
   

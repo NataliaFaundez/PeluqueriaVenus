@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Product:</strong>
-  <%= @sale.Product %>
-</p>
+<div class="panel panel-primary col-md-offset-2 col-md-3">
+  <div class="panel-heading">producto</div>
+  <p>
+    <strong>Product:</strong>
+    <%= @sale.Product %>
+  </p>
 
-<p>
-  <strong>Client:</strong>
-  <%= @sale.Client %>
-</p>
+  <p>
+    <strong>Client:</strong>
+    <%= @sale.Client %>
+  </p>
 
-<p>
-  <strong>Fecha:</strong>
-  <%= @sale.fecha %>
-</p>
+  <p>
+    <strong>Fecha:</strong>
+    <%= @sale.fecha %>
+  </p>
+ </div>
 
-<%= link_to 'Edit', edit_sale_path(@sale) %> |
-<%= link_to 'Back', sales_path %>
+<%= link_to 'Editar', edit_sale_path(@sale) %> |
+<%= link_to 'Atras', sales_path %>
