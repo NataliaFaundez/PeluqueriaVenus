@@ -2,44 +2,51 @@
 
 <h1>Clientes</h1>
 
-<div class="panel panel-primary col-md-offset-2">
-  <div class="panel-heading">Clientes</div>
+<div class="row">
+  <div class="panel panel-primary col-md-offset-1 col-md-6">
+    <div class="panel-heading">Clientes</div>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Rut</th>
-        <th>Nombre</th>
-        <th>Telefono</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Rut</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-    <tbody>
-      <% @clients.each do |client| %>
-        <tr>
-          <td><%= client.rut %></td>
-          <td><%= client.nombre %></td>
-          <td><%= client.telefono %></td>
-          <% if user_signed_in? %>
-            <%@usuario = User.find(current_user.id)%>
-            <% if @usuario.tipo_usuario == 1 %>
-              <td><%= link_to 'Mostrar', client %></td>
-              <td><%= link_to 'Editar', edit_client_path(client) %></td>
-              <td><%= link_to 'Eliminar', client, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
-            <% end %>
+        <tbody>
+          <% @clients.each do |client| %>
+            <tr>
+              <td><%= client.rut %></td>
+              <td><%= client.nombre %></td>
+              <td><%= client.telefono %></td>
+              <% if user_signed_in? %>
+                <%@usuario = User.find(current_user.id)%>
+                <% if @usuario.tipo_usuario == 1 %>
+                  <td><%= link_to 'Mostrar', client %></td>
+                  <td><%= link_to 'Editar', edit_client_path(client) %></td>
+                  <td><%= link_to 'Eliminar', client, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+                <% end %>
+              <% end %>
+            </tr>
           <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
 <br>
 
-<% if user_signed_in? %>
-  <%@usuario = User.find(current_user.id)%>
-  <% if @usuario.tipo_usuario == 1 or @usuario.tipo_usuario == 2 %>
-    <%= link_to 'Nuevo cliente', new_client_path %>
-  <% end %>
-<% end %>
+<div class="row">
+  <div class="col-md-offset-3">
+    <% if user_signed_in? %>
+      <%@usuario = User.find(current_user.id)%>
+      <% if @usuario.tipo_usuario == 1 or @usuario.tipo_usuario == 2 %>
+        <%= link_to 'Nuevo cliente', new_client_path %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

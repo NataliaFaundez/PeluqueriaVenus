@@ -23,6 +23,8 @@ private
 
     elsif request.original_fullpath == new_user_session_path
 
+    elsif request.original_fullpath == new_password_path(resource_name)
+      
     else
       redirect_to root_path, notice: "No tienes permiso de ver esta página, inicia sesión"
     end

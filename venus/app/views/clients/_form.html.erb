@@ -13,20 +13,23 @@
 
   <div class="panel panel-primary col-md-offset-2 col-md-3">
     <div class="panel-heading">Cliente</div>
-    <div class="field">
-      <%= f.label :rut %><br>
-      <%= f.text_field :rut %>
-    </div>
-    <div class="field">
-      <%= f.label :nombre %><br>
-      <%= f.text_field :nombre %>
-    </div>
-    <div class="field">
-      <%= f.label :telefono %><br>
-      <%= f.text_field :telefono %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
+      <div class="row">
+        <div class="field">
+          <%= f.label :rut %><br>
+          <%= f.text_field :rut %>
+        </div>
+        <div class="field">
+          <%= f.label :nombre %><br>
+          <%= f.text_field :nombre %>
+        </div>
+        <div class="field">
+          <%= f.label :telefono %><br>
+          <%= f.text_field :telefono %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </div>
     </div>
   </div>
 <% end %>
