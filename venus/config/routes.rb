@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  get 'user/index'
+
   get 'contador/index'
 
   get 'estilista/index'
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
   get 'estilista' => 'estilista#index'
   get 'contador' => 'contador#index'
   get 'nuevo_producto' => 'products#new'
+  get 'usuarios' => 'user#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

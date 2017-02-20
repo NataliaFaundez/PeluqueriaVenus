@@ -15,9 +15,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :email, :password, :password_confirmation, :tipo_usuario])
 
   end
+
 private
   def autenticate_user! #metodo que limita las paginas que puede visitar un usuario sin entrar a su cuenta
-    if user_signed_in?
+=begin    if user_signed_in?
 
     elsif request.original_fullpath == root_path
 
@@ -28,7 +29,9 @@ private
     else
       redirect_to root_path, notice: "No tienes permiso de ver esta página, inicia sesión"
     end
+=end
   end
+
   
 #metodo que indica a que pagina direccionar segun tipo de usuario
 def after_sign_in_path_for(resource)
