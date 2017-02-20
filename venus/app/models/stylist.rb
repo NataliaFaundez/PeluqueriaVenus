@@ -1,3 +1,3 @@
 class Stylist < ActiveRecord::Base
-	has_many :service, dependent: :destroy
+	has_many :services, dependent: :destroy
 end

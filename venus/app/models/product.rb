@@ -1,3 +1,3 @@
 class Product < ActiveRecord::Base
-	has_many :sale, dependent: :destroy
+	has_many :sales, dependent: :destroy
 end
