@@ -6,8 +6,7 @@ class User < ActiveRecord::Base
 
   # Confirma email y valida que no sean vacios con presence
   # muestra el mensaje de error con message
-  validates :email , presence: true , confirmation: true
-  validates :email_confirmation, presence: { message: " es requerido"}
+  validates :email , presence: true 
 
   # Validamos en una expresion regular nuestro email
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
