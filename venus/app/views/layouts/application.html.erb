@@ -29,7 +29,7 @@
                 <% if user_signed_in? %>
                   <%@usuario = User.find(current_user.id)%>
                   <% if @usuario.tipo_usuario == 1 %>
-                    <li><%=link_to "Admin", admin_url%></li>
+                    <li><%=link_to "Administrador", admin_url%></li>
                   <% elsif @usuario.tipo_usuario == 2 %>
                     <li><%=link_to "Estilista", estilista_url%>
                   <% elsif @usuario.tipo_usuario == 3 %>
