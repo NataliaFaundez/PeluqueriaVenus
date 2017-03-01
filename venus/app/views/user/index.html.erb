@@ -22,10 +22,8 @@
             <% if user_signed_in? %>
               <%@usuario = User.find(current_user.id)%>
               <% if @usuario.tipo_usuario == 1  %>
-                <!--======revisar funcion editar, edita al usuario conectado, mismo problema qu eliminar===-->
-                <td><%= link_to 'Editar', edit_user_registration_path(user) %></td>
                 <!--====revisar funcion que elimina (elimina el usuario conectado, no quien la llama)===-->
-                <!--<td><#%= link_to 'Eliminar', registration_path(user), data: { confirm: "Estas seguro?" }, method: :delete %></td>-->
+                <td><%= link_to 'Eliminar', usuarios_url(user), data: { confirm: "Estas seguro?" }, method: :delete %></td>
               <% end %>
             <% end %>
           </tr>
