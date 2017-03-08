@@ -19,8 +19,8 @@
       <tbody>
         <% @sales.each do |sale| %>
           <tr>
-            <td><%= sale.Product %></td>
-            <td><%= sale.Client %></td>
+            <td><%= sale.product %></td>
+            <td><%= sale.client %></td>
             <td><%= sale.fecha %></td>
             <% if user_signed_in? %>
               <%@usuario = User.find(current_user.id)%>

@@ -33,19 +33,7 @@ private
   end
 
   
-#metodo que indica a que pagina direccionar segun tipo de usuario
-def after_sign_in_path_for(resource)
-  @usuario = User.find(resource.id)
-  if @usuario.tipo_usuario == 1
-    admin_url
-  elsif @usuario.tipo_usuario == 2
-    estilista_url
-  elsif @usuario.tipo_usuario == 3
-    contador_url
-  else
-    root_path
-  end
-end   
+ 
     
 
 end

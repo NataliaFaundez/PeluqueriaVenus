@@ -1,5 +1,5 @@
 <div class="panel panel-primary col-md-offset-3 col-md-2">
-  <div class="panel-heading">CREAR NUEVA CUENTA</div>
+  <div class="panel-heading">INGRESAR</div>
 
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -13,12 +13,7 @@
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end -%>
+      
 
       <div class="actions">
         <%= f.submit "Guardar" %>

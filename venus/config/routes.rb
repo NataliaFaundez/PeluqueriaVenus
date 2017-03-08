@@ -23,9 +23,7 @@ Rails.application.routes.draw do
   resources :stylists
   resources :clients
 
-  get 'admin' => 'admin#index'
-  get 'estilista' => 'estilista#index'
-  get 'contador' => 'contador#index'
+  
   get 'nuevo_producto' => 'products#new'
   get 'usuarios' => 'user#index'
   delete 'usuarios' => 'user#destroy'
